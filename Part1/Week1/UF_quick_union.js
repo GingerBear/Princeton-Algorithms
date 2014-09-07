@@ -1,10 +1,11 @@
 /**
 *
-* Union Find with quick find
+* Union Find with quick union
 * --------------------------------
 * - Data stored in plain old array
-* - union operation is to set the value the same for both node to unioned
-* - find operation is to check if their values are the same
+* - tree structure in array, value is the parent 
+* - union operation is to set the 1st node's root to be the child of the 2nd node's root
+* - find operation is to check if their roots are the same
 *
 **/
 
