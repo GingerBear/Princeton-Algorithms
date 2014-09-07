@@ -1,4 +1,6 @@
 Princeton-Algorithms
 ====================
 
-Implementation of algorithms in algorithm course by Princeton University on Coursera
+Algorithms mentioned in the course will be implmented with JavaScript in the repo.
+
+https://class.coursera.org/algs4partI-006
