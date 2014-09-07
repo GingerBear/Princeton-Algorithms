@@ -17,20 +17,22 @@ function UF(num) {
   }
 }
 
-UF.prototype.union = function(n1, n2) {
-  var p = this.data[n1];
-  var q = this.data[n2];
-
-  if (p !== q) {
-    for (var i = 0; i < this.data.length; i++) {
-      if (this.data[i] === p) {
-        this.data[i] = q;
-      }
-    }
+UF.prototype.root = function(n) {
+  var current = n;
+  while(this.data[current] !== current) {
+    current = this.data[current];
   }
+  return current;
+};
+
+UF.prototype.union = function(n1, n2) {
+  var root1 = this.root(n1);
+  var root2 = this.root(n2);
+
+  this.data[root1] = root2;
   console.log(this.data);
 };
 
 UF.prototype.find = function(n1, n2) {
-  return this.data[n1] === this.data[n2];
+  return this.root(n1) === this.root(n2);
 };
