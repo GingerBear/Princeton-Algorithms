@@ -9,30 +9,30 @@
 **/
 
 function UF(num) {
-	this.data = [];
+  this.data = [];
 
-	// init the nodes
-	for (var i = 0; i < num; i++) {
-		this.data[i] = i;
-	}
+  // init the nodes
+  for (var i = 0; i < num; i++) {
+    this.data[i] = i;
+  }
 }
 
 UF.prototype.union = function(n1, n2) {
-	var p = this.data[n1];
-	var q = this.data[n2];
+  var p = this.data[n1];
+  var q = this.data[n2];
 
-	if (p !== q) {
-		for (var i = 0; i < this.data.length; i++) {
-			if (this.data[i] === p) {
-				this.data[i] = q;
-			}
-		}
-	}
-	console.log(this.data);
+  if (p !== q) {
+    for (var i = 0; i < this.data.length; i++) {
+      if (this.data[i] === p) {
+        this.data[i] = q;
+      }
+    }
+  }
+  console.log(this.data);
 };
 
 UF.prototype.find = function(n1, n2) {
-	return this.data[n1] === this.data[n2];
+  return this.data[n1] === this.data[n2];
 };
 
 
@@ -56,15 +56,15 @@ uf.union(3, 5);
 uf.union(0, 5);
 
 function testUF(n1, n2, shouldConnected) {
-	var syntax = shouldConnected ? "" : "not ";
-	var result = uf.find(n1, n2);
-	result = shouldConnected ? result : !result;
+  var syntax = shouldConnected ? "" : "not ";
+  var result = uf.find(n1, n2);
+  result = shouldConnected ? result : !result;
 
-	if (result) {
-		console.log('good: ' + n1 + ' and ' + n2 + ' are ' + syntax + 'connected');
-	} else {
-		console.error('bad: ' + n1 + ' and ' + n2 + ' should ' + syntax + 'be connected');
-	}
+  if (result) {
+    console.log('good: ' + n1 + ' and ' + n2 + ' are ' + syntax + 'connected');
+  } else {
+    console.error('bad: ' + n1 + ' and ' + n2 + ' should ' + syntax + 'be connected');
+  }
 }
 
 testUF(2, 7, true);
