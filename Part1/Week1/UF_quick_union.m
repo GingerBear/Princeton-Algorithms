@@ -21,13 +21,11 @@
 }
 
 - (NSInteger)root:(NSInteger)index {
-    NSInteger root = index;
-    
     while (index != [self.dataArray[index] integerValue]) {
-        root = [self.dataArray[index] integerValue];
+        index = [self.dataArray[index] integerValue];
     }
     
-    return root;
+    return index;
 }
 
 - (BOOL)connected:(NSInteger)p withAnotherNum:(NSInteger)q {
